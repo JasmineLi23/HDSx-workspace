@@ -1,7 +1,9 @@
 ---
 title: "My First Report"
 author: "Your Name"
-format: html
+format:
+  html:
+    embed-resources: true
 ---
 
 ## Welcome to your practice report

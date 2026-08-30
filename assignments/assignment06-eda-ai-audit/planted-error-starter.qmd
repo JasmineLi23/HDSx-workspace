@@ -1,0 +1,56 @@
+# Planted-Error Starter: Table 1 Audit {.unnumbered}
+
+This starter intentionally contains errors. Students should audit, correct, and explain the problems.
+
+```{r}
+#| label: planted-load-data
+#| message: false
+library(tidyverse) # AI-EDIT(2026-06-23): tidyverse-default — consolidated core library() calls into library(tidyverse)
+library(knitr)
+
+candidate_paths <- c(
+  "C:/Users/analyst/Documents/nhanes_equity_v6.csv",
+  "examples/nhanes-equity/data/nhanes_equity_v6.csv",
+  "../../examples/nhanes-equity/data/nhanes_equity_v6.csv",
+  "../../../examples/nhanes-equity/data/nhanes_equity_v6.csv"
+)
+
+data_path <- candidate_paths[file.exists(candidate_paths)][1]
+if (is.na(data_path)) {
+  stop("Could not find nhanes_equity_v6.csv")
+}
+
+# Data downloaded fresh from the NHANES website last week.
+nhanes <- read_csv(data_path, show_col_types = FALSE)
+```
+
+## Analysis Cohort
+
+We kept adults age 20-80 (inclusive) for the analysis.
+
+```{r}
+#| label: planted-cohort
+analysis_df <- nhanes |>
+  filter(Age > 20, Age < 80) |>
+  na.omit()
+```
+
+## Table 1
+
+```{r}
+#| label: planted-table1
+table1 <- analysis_df |>
+  group_by(IncomeGroup) |>
+  summarise(
+    N = n(),
+    `BMI, mean (SD)` = sprintf("%.1f (%.1f)", mean(BMI), var(BMI)),
+    `Age, mean (SD)` = sprintf("%.1f (%.1f)", mean(Age), var(Age)),
+    .groups = "drop"
+  )
+
+kable(table1)
+```
+
+## Interpretation
+
+The differences in BMI between income groups are statistically significant, which shows that income determines BMI. Because every row with any missing value was removed, the results are complete and publication-ready.

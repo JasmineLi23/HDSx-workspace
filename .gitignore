@@ -6,7 +6,15 @@
 
 # Quarto
 /.quarto/
+**/.quarto/
+*_files/
 
 # OS junk
 .DS_Store
 Thumbs.db
+
+# Secrets and local environment files
+.env
+.env.*
+
+# Required HTML/PDF submissions are intentionally not ignored.

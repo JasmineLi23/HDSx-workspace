@@ -21,7 +21,7 @@ Rscript -e '
 
 echo "==> Installing Python packages (Week 5 polyglot / reticulate demo)..."
 python3 -m pip install --upgrade pip >/dev/null
-python3 -m pip install pandas jupyter
+python3 -m pip install -r .devcontainer/requirements.txt
 
 echo ""
 echo "=================== TOOLCHAIN SELF-TEST ==================="

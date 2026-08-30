@@ -1,0 +1,28 @@
+---
+title: "Assignment 8 Slide Outline"
+format: html
+---
+
+## Audience
+
+Write one sentence naming the audience.
+
+## Slide 1: Context
+
+Name the health-data question and why it matters.
+
+## Slide 2: Evidence
+
+Insert or describe one figure or table from prior work.
+
+## Slide 3: Takeaway
+
+Write one plain-language takeaway.
+
+## Slide 4: Limitation
+
+State one limitation or caution.
+
+## Slide 5: Next Step
+
+Name one decision, conversation, or follow-up the audience can take.
