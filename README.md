@@ -46,7 +46,7 @@ health data.
 ## Later assignments
 
 The `assignments/` folder contains student-only starters and blank submission
-folders for A2–A10. Use the exact starter and destination named in the course
+folders for A2–A9. Use the exact starter and destination named in the course
 brief. Work from the repository root so paths such as
 `examples/nhanes-equity/data/nhanes_equity_v6.csv` resolve consistently.
 

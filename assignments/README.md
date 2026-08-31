@@ -13,7 +13,7 @@ original starter unchanged and place your edited work in that assignment's
 | A7 | `assignment07-dashboard/dashboard-starter.qmd`; `dashboard-adaptation-template.md` |
 | A8 | `assignment08-communication/starter-slides.qmd`; `slide-outline-template.qmd`; `peer-feedback-template.md` |
 | A9 | `assignment09-reporting/report-template.qmd`; `references.bib`; both audit/checklist templates |
-| A10 | `assignment10-portfolio-surgery/failure-log-template.md`; `peer-review-template.md` |
+| Week 11 (Portfolio Surgery) | `assignment10-portfolio-surgery/failure-log-template.md`; `peer-review-template.md` — the Week 11 in-class session (not a graded assignment); its outputs feed M4 and the Final Portfolio |
 
 Run and render from the repository root. Required rendered artifacts must be
 committed with their source files.
