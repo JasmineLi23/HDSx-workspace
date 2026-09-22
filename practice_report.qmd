@@ -41,3 +41,10 @@ hist(patients$age,
 
 When you are happy with the result, **commit and sync** your work (the Week 2
 course page walks you through this), then submit your repository link on Canvas.
+
+## My note
+
+- what I learned in the class: use github to store the changes each time we change our code. Code will be staged and commited to the github
+from the VS code, and then we push the commit, there will be our changes on the github.This process is called version control
+
+
