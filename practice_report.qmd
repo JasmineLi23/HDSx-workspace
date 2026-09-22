@@ -1,6 +1,6 @@
 ---
 title: "My First Report"
-author: "Your Name"
+author: "jianing li"
 format:
   html
     embed-resources: true
