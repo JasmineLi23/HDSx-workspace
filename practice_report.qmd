@@ -2,7 +2,7 @@
 title: "My First Report"
 author: "jianing li"
 format:
-  html
+  html:
     embed-resources: true
 ---
 
@@ -23,6 +23,8 @@ shows the first few rows.
 ```{r}
 patients <- read.csv("data/patients.csv")
 head(patients)
+class(patients$diabetes)
+summary(patients)
 ```
 
 ## A first chart
