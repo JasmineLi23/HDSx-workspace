@@ -2285,6 +2285,29 @@ vertical-align: -.125em;
 <ul>
 <li><strong>What I learned:</strong>: use github to store the changes each time we change our code. Code will be staged and commited to the github from the VS code, and then we push the commit, there will be our changes on the github.This process is called version control</li>
 </ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(patients<span class="sc">$</span>diabetes)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;character&quot;</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(patients)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       id             age               sex           region    systolic_bp   
+ Min.   : 1.00   Min.   :35.00   Length   :12   Length   :12   Min.   :108.0  
+ 1st Qu.: 3.75   1st Qu.:46.00   N.unique : 2   N.unique : 4   1st Qu.:122.0  
+ Median : 6.50   Median :55.50   N.blank  : 0   N.blank  : 0   Median :132.0  
+ Mean   : 6.50   Mean   :54.08   Min.nchar: 1   Min.nchar: 4   Mean   :131.3  
+ 3rd Qu.: 9.25   3rd Qu.:62.00   Max.nchar: 1   Max.nchar: 5   3rd Qu.:142.0  
+ Max.   :12.00   Max.   :72.00                                 Max.   :150.0  
+      diabetes 
+ Length   :12  
+ N.unique : 2  
+ N.blank  : 0  
+ Min.nchar: 2  
+ Max.nchar: 3  
+               </code></pre>
+</div>
+</div>
 </section>
 
 </main>
