@@ -23,8 +23,7 @@ shows the first few rows.
 ```{r}
 patients <- read.csv("data/patients.csv")
 head(patients)
-class(patients$diabetes)
-summary(patients)
+
 ```
 
 ## A first chart
@@ -50,4 +49,7 @@ course page walks you through this), then submit your repository link on Canvas.
 Code will be staged and commited to the github from the VS code, 
 and then we push the commit, there will be our changes on the github.This process is called version control
 
-
+```{r}
+class(patients$diabetes)
+summary(patients)
+```
