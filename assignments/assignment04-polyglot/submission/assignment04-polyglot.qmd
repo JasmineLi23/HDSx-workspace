@@ -1,6 +1,6 @@
 ---
-title: "Example A4 Title"
-author: "Your Name"
+title: "ASSIGNMENT 4"
+author: "Jasmine Li"
 format: html
 ---
 
@@ -9,7 +9,38 @@ format: html
 Replace the example path below with the location of your data file.
 
 ```{r}
-# data <- read.csv("path/to/your-data.csv")
-# Or, for a CSV using readr:
-# data <- readr::read_csv("path/to/your-data.csv")
+library(tidyverse)
+
+nhanes <- read_csv("examples/nhanes-equity/data/nhanes_equity_v6.csv")
+
+r_summary <- nhanes |>
+  filter(!is.na(BMI), !is.na(IncomeGroup), !is.na(Gender)) |>
+  group_by(IncomeGroup, Gender) |>
+  summarise(
+    n = n(),
+    mean_bmi = round(mean(BMI), 2),
+    sd_bmi = round(sd(BMI), 2),
+    .groups = "drop"
+  ) |>
+  arrange(IncomeGroup, Gender)
+
+r_summary
+```
+```{r}
+summarise_mean_sd <- function(data, value, group1, group2) {
+  data |>
+    filter(!is.na({{ value }}), !is.na({{ group1 }}), !is.na({{ group2 }})) |>
+    group_by({{ group1 }}, {{ group2 }}) |>
+    summarise(
+      n = n(),
+      mean_value = round(mean({{ value }}), 2),
+      sd_value = round(sd({{ value }}), 2),
+      .groups = "drop"
+    ) |>
+    arrange({{ group1 }}, {{ group2 }})
+}
+
+r_function_summary <- summarise_mean_sd(nhanes, BMI, IncomeGroup, Gender)
+r_function_summary
+
 ```
