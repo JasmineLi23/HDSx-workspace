@@ -1,0 +1,15 @@
+---
+title: "Example A4 Title"
+author: "Your Name"
+format: html
+---
+
+## Load Data
+
+Replace the example path below with the location of your data file.
+
+```{r}
+# data <- read.csv("path/to/your-data.csv")
+# Or, for a CSV using readr:
+# data <- readr::read_csv("path/to/your-data.csv")
+```
