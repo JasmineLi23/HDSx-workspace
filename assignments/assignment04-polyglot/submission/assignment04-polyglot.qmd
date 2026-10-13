@@ -44,3 +44,6 @@ r_function_summary <- summarise_mean_sd(nhanes, BMI, IncomeGroup, Gender)
 r_function_summary
 
 ```
+```{r}
+mean(nhanes$BMI, na.rm = TRUE)
+```
