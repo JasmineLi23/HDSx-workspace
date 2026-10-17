@@ -9,7 +9,12 @@ author: "jasmine"
 ```{r}
 #| message: false
 #| warning: false
+install.packages("readr")
+install.packages("dplyr")
 library(tidyverse)  # AI-EDIT(2026-06-23): tidyverse-default — consolidated core library() calls into library(tidyverse)
+library(readr)
+library(dplyr)
+
 ```
 
 ## Load Data
@@ -67,4 +72,4 @@ write_csv(bmi_summary, "assignments/assignment02-r-with-ai/submission/output/sum
 
 ## AI Audit Note
 
-Add comments explaining which parts were drafted or debugged with AI and how you verified the result.
+I asked ai to help me load readr, by typing to load readr can I use library(readr), I checked that by running the code
