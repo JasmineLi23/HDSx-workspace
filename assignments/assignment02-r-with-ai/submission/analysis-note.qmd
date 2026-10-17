@@ -41,9 +41,10 @@ Replace this example with your own summary if you choose a different question.
 bmi_summary <- nhanes |>
   filter(!is.na(BMI), !is.na(IncomeGroup)) |>
   group_by(IncomeGroup) |>
+  select(BMI, Weight, Height) |>
   summarise(
     n = n(),
-    mean_bmi = mean(BMI),
+    median_bmi = median(BMI),
     .groups = "drop"
   )
 
@@ -56,7 +57,7 @@ bmi_summary
 mean_with_n <- function(x) {
   tibble(
     n = sum(!is.na(x)),
-    mean = mean(x, na.rm = TRUE)
+    median = median(x, na.rm = TRUE)
   )
 }
 
