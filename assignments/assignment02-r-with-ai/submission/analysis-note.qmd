@@ -73,4 +73,6 @@ write_csv(bmi_summary, "assignments/assignment02-r-with-ai/submission/output/sum
 
 ## AI Audit Note
 
-I asked ai to help me load readr, by typing to load readr can I use library(readr), I checked that by running the code
+I asked ai to help me load readr, by typing to load readr can I use library(readr),
+I asked ai for information about the functions in dplyr and examples of using them to implement the functions into my own work
+I checked that by running the code
