@@ -4,6 +4,7 @@ author: "Jasmine Li"
 format: html
 ---
 
+
 ## Load Data
 
 Replace the example path below with the location of your data file.
@@ -26,6 +27,8 @@ r_summary <- nhanes |>
 
 r_summary
 ```
+
+here is the summary of the mean and standard deviation of the features in nhanes data set
 ```{r}
 summarise_mean_sd <- function(data, value, group1, group2) {
   data |>
@@ -46,4 +49,19 @@ r_function_summary
 ```
 ```{r}
 mean(nhanes$BMI, na.rm = TRUE)
+sd(nhanes$BMI, na.rm = TRUE)
+```
+
+
+
+
+here is a summary of the number of rows and missing bmi and income values
+
+```{r}
+nhanes |>
+  summarise(
+    rows = n(),
+    missing_bmi = sum(is.na(BMI)),
+    missing_income = sum(is.na(IncomeGroup))
+  )
 ```
