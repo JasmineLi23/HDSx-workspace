@@ -6,6 +6,8 @@ course work here. The course book is a separate, read-only reference; do not
 copy book source files into this repository unless an assignment explicitly
 tells you to.
 
+note: this is a small change on read.me to test assignment_3's branch( the repository must be forked first before we edit)
+
 ## Project map
 
 ```text
