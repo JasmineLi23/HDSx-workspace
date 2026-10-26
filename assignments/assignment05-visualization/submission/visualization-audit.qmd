@@ -47,7 +47,7 @@ corrected_plot <- ggplot(
   geom_line(linetype = "dashed", linewidth = 1) +
   expand_limits(y = 0) +
   labs(
-    title = "Low income associated with rising obesity in American adults",
+    title = "rising mean obesity in American adults is associated with Low income ",
     subtitle = "Adults age 20-80: BMI climbed steadily across NHANES cycle",
     x = "NHANES cycle",
     y = "MEAN BMI",
