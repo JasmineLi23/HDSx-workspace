@@ -34,8 +34,6 @@ flawed_summary <- nhanes |>
   filter(n >= 30)
 
 print(flawed_summary)
-
-
 ```
 
 ```{r}
@@ -59,9 +57,7 @@ corrected_plot <- ggplot(
 
 
 print(corrected_plot)
-
 ```
 ```{r}
 ggsave("corrected-plot.png", corrected_plot, width = 7, height = 5)
-
- ```
+```
