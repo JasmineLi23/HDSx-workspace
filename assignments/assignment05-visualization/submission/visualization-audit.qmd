@@ -27,9 +27,11 @@ flawed_summary <- nhanes |>
   filter(!is.na(BMI), !is.na(IncomeGroup), Cycle %in% endpoint_cycles) |>
   group_by(Cycle, IncomeGroup) |>
   summarise(
+    n = n(),
     mean_bmi = mean(BMI),
     .groups = "drop"
-  )
+  ) |>
+  filter(n >= 30)
 
 print(flawed_summary)
 
@@ -37,22 +39,29 @@ print(flawed_summary)
 ```
 
 ```{r}
-flawed_plot <- ggplot(
+corrected_plot <- ggplot(
   flawed_summary,
   aes(x = Cycle, y = mean_bmi, color = IncomeGroup, group = IncomeGroup)
 ) +
   geom_point(size = 3) +
   geom_line(linetype = "dashed", linewidth = 1) +
-  scale_y_continuous(limits = c(24, 28)) +
+  expand_limits(y = 0) +
   labs(
-    title = "Low income drives rising obesity in American adults",
-    subtitle = "Adults age 20-80: BMI climbed steadily across every NHANES cycle",
+    title = "Low income associated with rising obesity in American adults",
+    subtitle = "Adults age 20-80: BMI climbed steadily across NHANES cycle",
     x = "NHANES cycle",
-    y = "BMI",
-    color = "Income"
+    y = "MEAN BMI",
+    color = "Income",
+    caption = "Records with missing BMI, income, or cycle excluded; groups under n = 30 removed.\nDescriptive only, not a causal or population estimate."
   ) +
-  theme_minimal(base_size = 12)
+  theme_minimal(base_size = 12) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "bottom")
 
-print(flawed_plot)
+
+print(corrected_plot)
 
 ```
+```{r}
+ggsave("corrected-plot.png", corrected_plot, width = 7, height = 5)
+
+ ```

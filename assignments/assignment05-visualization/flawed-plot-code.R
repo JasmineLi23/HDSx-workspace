@@ -28,8 +28,10 @@ flawed_summary <- nhanes |>
   filter(!is.na(BMI), !is.na(IncomeGroup), Cycle %in% endpoint_cycles) |>
   group_by(Cycle, IncomeGroup) |>
   summarise(
+    
     mean_bmi = mean(BMI),
     .groups = "drop"
+    
   )
 
 flawed_plot <- ggplot(
@@ -38,7 +40,7 @@ flawed_plot <- ggplot(
 ) +
   geom_point(size = 3) +
   geom_line(linetype = "dashed", linewidth = 1) +
-  scale_y_continuous(limits = c(24, 28)) +
+  expand_limits(y = 0) +
   labs(
     title = "Low income drives rising obesity in American adults",
     subtitle = "Adults age 20-80: BMI climbed steadily across every NHANES cycle",
