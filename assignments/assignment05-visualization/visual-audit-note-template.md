@@ -10,7 +10,9 @@ Write the descriptive question the plot answers.
 The first row is a worked example of the expected shape — replace it with your own issue.
 
 | Issue | Category | Why it matters | Correction |
-|---|---|---|---|
+|y axis is misleading|Correctness|because the plot actually use the unweighted mean to calculate the bmi, instead of just bmi, which can be misleading|in labs, instead of y = "BMI", use y = "MEAN BMI"|
+
+
 | *Example: y-axis starts at 22 instead of 0* | *Correctness* | *Exaggerates the BMI gap between groups, suggesting a larger difference than the data show* | *Start the y-axis at 0 (or show the full data range) and state the axis choice in the caption* |
 |  | Correctness |  |  |
 |  | Design |  |  |
