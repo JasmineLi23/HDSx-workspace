@@ -1,1 +1,46 @@
-v
+```{r}
+#| label: planted-load-data
+#| message: false
+library(tidyverse) # AI-EDIT(2026-06-23): tidyverse-default — consolidated core library() calls into library(tidyverse)
+library(knitr)
+candidate_paths <- c(
+  "C:/Users/analyst/Documents/nhanes_equity_v6.csv",
+  "examples/nhanes-equity/data/nhanes_equity_v6.csv",
+  "../../examples/nhanes-equity/data/nhanes_equity_v6.csv",
+  "../../../examples/nhanes-equity/data/nhanes_equity_v6.csv"
+)
+
+data_path <- candidate_paths[file.exists(candidate_paths)][1]
+if (is.na(data_path)) {
+  stop("Could not find nhanes_equity_v6.csv")
+}
+
+# Data downloaded fresh from the NHANES website last week.
+nhanes <- read_csv(data_path, show_col_types = FALSE)
+```
+
+```{r}
+nhanes
+```
+
+```{r}
+#| label: planted-cohort
+analysis_df <- nhanes |>
+  filter(Age > 20, Age < 80) |>
+  na.omit()
+
+  analysis_df 
+```
+```{r}
+#| label: planted-table1
+table1 <- analysis_df |>
+  group_by(IncomeGroup) |>
+  summarise(
+    N = n(),
+    `BMI, mean (SD)` = sprintf("%.1f (%.1f)", mean(BMI), var(BMI)),
+    `Age, mean (SD)` = sprintf("%.1f (%.1f)", mean(Age), var(Age)),
+    .groups = "drop"
+  )
+
+kable(table1)
+```
