@@ -21,6 +21,7 @@ nhanes <- read_csv(data_path, show_col_types = FALSE)
 
 ```{r}
 nhanes
+## find missing values
 nhanes |>
   summarise(across(everything(), ~ sum(is.na(.x)))) |>
   pivot_longer(
@@ -52,8 +53,12 @@ table1 <- analysis_df |>
 
 kable(
   table1,
-  caption = "BMI and age by income group among adults aged 20–80. Participants with missing income group, BMI, or age were excluded."
+  caption = "BMI and age by income group among adults aged 20–80.unweighted sd is calculated, Participants with missing income group, BMI, or age were excluded."
 )
+```
+
+```{r}
+write_csv(table1, "table1.csv")
 ```
 
 ## Interpretation
