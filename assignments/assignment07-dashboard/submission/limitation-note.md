@@ -1,0 +1,1 @@
+The dashboard shows unweighted mean BMI by income group and survey cycle in the NHANES classroom dataset and cannot establish whether income affects BMI( no causal effect).
