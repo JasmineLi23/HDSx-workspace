@@ -51,6 +51,18 @@ nhanes <- read_csv(data_path, show_col_types = FALSE)
 ```
 ```{r}
 nhanes
+missing_by_column <- nhanes |>
+  summarise(across(everything(), ~ sum(is.na(.x)))) |>
+  pivot_longer(
+    cols = everything(),
+    names_to = "column",
+    values_to = "n_missing"
+  )
+
+knitr::kable(
+  missing_by_column,
+  caption = "Missing values by column before dashboard filtering"
+)
 ```
 
 ## Control
