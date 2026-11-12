@@ -1,0 +1,1 @@
+From the repository root in a fresh GitHub Codespace, I ran `quarto render assignments/assignment07-dashboard/submission/dashboard.qmd`. The dashboard source is at the relative path `assignments/assignment07-dashboard/submission/dashboard.qmd`, and the command successfully produced `dashboard.html`.
