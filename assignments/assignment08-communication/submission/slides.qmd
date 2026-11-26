@@ -18,16 +18,19 @@ bibliography: ../../../references.bib
 
 ## Evidence
 
-Insert one figure or table from prior work.
+![Mean waist circumference by education level](<../Weixin Image_20261125180339_666_157.png>)
 
-State the finding in one sentence.
+Among adults aged 20–80, mean waist circumference climbed across all education groups between NHANES 1999–2000 and 2021–2023, however the HS or less education groups shows a lower rate of increase comparing to the other two groups.
 
 Source note: CDC/NCHS NHANES public-use data are the source for the NHANES classroom example [@cdc-nhanes].
 
+
 ## Limitation And Next Step
 
-**Limitation:** State what the evidence cannot prove.
+**Limitation:** since it's an oservational study which may include confounding variables, it cannot prove that the education level causes the decrease of waist circumference.
 
-**Next step:** Name one action, discussion, or analysis that should follow.
+**Next step:** We could calculate the difference in mean waist circumference between the College Grad and Some College groups for each survey cycle. Collecting more detailed data, such as monthly measurements, would allow us to plot trends over time.
 
-**AI-use note:** State whether AI helped draft or revise the slide wording and what you checked.
+**AI-use note:** 1. I asked ai to help me rephrase the word in limitation part
+                2. I asked ai to plot the graph using R code, and use the example in assinment 7 as reference, providing the dataset in data file nhanes
+                3. I aksed ai to help me edit the relative path in evidence part to make sure it fits the markdown file

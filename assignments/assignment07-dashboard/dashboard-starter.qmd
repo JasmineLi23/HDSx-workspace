@@ -47,6 +47,7 @@ if (is.na(data_path)) {
 }
 
 nhanes <- read_csv(data_path, show_col_types = FALSE)
+nhanes
 ```
 
 ## Control
